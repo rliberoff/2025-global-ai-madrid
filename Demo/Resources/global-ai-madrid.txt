@@ -1,0 +1,69 @@
+El Global AI Bootcamp es un evento anual organizado por la Global AI Community que se realiza en más de 70 comunidades localidades de todo el mundo a las que les apasiona todo lo relacionado con el desarrollo de soluciones de Inteligencia Artificial con el stack de tecnologías de Microsoft.
+
+En la edición del año 2025 en la ciudad de Madrid se han organizado dos actividades:
+
+  - El viernes 28 de febrero se realizan jornadas de talleres (workshops) alucinantes.
+  - El sábado 1 de marzo viviremos el gran evento presencial.
+
+Agenda de los Workshops:
+
+  - Turno de la mañana
+    - Genera propio asistente multitareas en Copilot Studio: Este workshop aprenderemos a crear una asistente que pueda realizar varias tareas relacionadas con una agencia de viajes.
+      Ponentes: Jorge Fernandez y David Lorenzo
+    - Preparación de Entornos de Desarrollo para Proyectos de IA: ¿Quieres entrar en el mundo de la inteligencia artificial generativa con las herramientas adecuadas? Este workshop introductorio te enseñará a preparar tu equipo para desarrollar proyectos de IA de manera eficiente y profesional. Aprende a crear entornos de desarrollo consistentes y escalables utilizando DevContainers, optimizados para trabajar con Python e integrados con Azure.
+      Ponentes: Alejandro Almeida
+    - Construye tu propio RAG con Azure: ¿Quieres entrar en el mundo de la inteligencia artificial generativa con las herramientas adecuadas? Este workshop introductorio te enseñará a preparar tu equipo para desarrollar proyectos de IA de manera eficiente y profesional. Aprende a crear entornos de desarrollo consistentes y escalables utilizando DevContainers, optimizados para trabajar con Python e integrados con Azure.
+      Ponentes: Roberto Navarro
+    - Fine-Tuning eficiente de SLMs mediante el uso de LoRA y la creación de un sistema Mixture-of-Experts (MoE) basado en tecnologías de estado del arte en Python: ¿Quieres profundizar en las técnicas avanzadas de inteligencia artificial y llevar tus habilidades al siguiente nivel? Únete a nuestro workshop y aprende sobre LoRA, MoE y SLMs, y cómo aplicarlos en proyectos reales utilizando Microsoft Azure.
+      Ponentes: Emilio Delgado
+  
+  - Turno de la tarde
+    - Introducción a Microsoft PromptFlow con Ejercicios Prácticos: ¿Estás listo para llevar tus habilidades en inteligencia artificial generativa al siguiente nivel? 🚀 Únete a este workshop exclusivo, donde aprenderás a implementar y gestionar flujos de IA generativa utilizando Microsoft PromptFlow.
+      Ponentes: Alejandro Almeida
+    - ML Pipelines Developer Guide: Cada proyecto de ML es diferente y en cada caso tenemos diferentes opciones y alternativas técnicas. Los libros de buenas prácticas están ahí, pero no hay nada como la experiencia de campo para saber qué funciona habitualmente y qué lo hace en menos ocasiones. Repasaremos una serie de trucos y consejos recopilados a lo largo de decenas de proyectos y más de 7 años de experiencia en proyectos de ML.
+      Ponentes: Pau Sempere
+    - Aprende a montar tus agentes con Semantic Kernel: ¿Eres desarrollador y te mola la IA pero no sabes cómo integrarla en tu propio código? ¿Harto de mandar requests a modelos de IA sin obtener los resultados deseados? ¿Has oído hablar de Semantic Kernel pero no has tenido la oportunidad de trabajar con él? ¿Te interesa el potencial de los Agentes de IA pero no sabes por dónde empezar? ¿Eres desarrollador, tienes libre el 28 de febrero y te apetece aprender algo nuevo? ¡Si la respuesta es sí a una o varias de estas preguntas, este workshop es perfecto para ti! Conoce Semantic Kernel desde cero y crea tu propio agente de IA. ¿Te animas?
+      Ponentes: Celeste Sanchez
+
+Agenda de las Sesiones:     
+
+    08:40 - Check-in
+    09:00 - Keynote
+    09:30 - Destrozando a tu jefe con D-Generative AI (Alejandro Almeida, David Oliva)
+    09:30 - NLTK: tus primeros pasos con procesamiento del lenguaje (Luis Merino)
+    09:30 - IA en el análisis de datos. Otra dimensión en Power BI (Ines Pascual Iglesias)
+    09:30 - ¡Examen para tu RAG!: Frameworks automáticos de evaluación (Jaime Nestares Rivas, Alvaro Ortega)
+    10:15 - IA lo mejor se te va la olla… (Javier Menendez Pallo, David Hurtado)
+    10:15 - Autogen y Autogen Studio: Creando Agentes de IA Autónomos (Luise Lopez)
+    10:15 - Búsqueda Inteligente en Videos y Documentos con Azure AI (Elbrinner Da Silva Fernandes)
+    10:15 - Evaluación y Logging en Aplicaciones de IA (Luis Mañez)
+    10:55 - Coffee Break
+    11:25 - VIP Session
+    11:35 - TimeGPT. Modelos fundacionales para series temporales (Pau Sempere)
+    11:35 - Desarrollando Asistentes Virtuales con Frameworks de Aplicaciones Conversacionales (David Rodriguez)
+    11:35 - De Linters a Agentes IA: La nueva era en validacion de APIS (Rafa Granados)
+    11:35 - IA al Servicio del Desarrollador (Sergio Gallardo Sales, Urko Nieto)
+    12:20 - Clasificación inteligente de documentos (Santiago Porras Rodríguez, Alberto Diaz Martin)
+    12:20 - AI meets Low code: AI Builder en Power Platform (Eickhel Mendoza)
+    12:20 - The Age of Agents: Modernising Your Applications (Manuel Sanchez Rodriguez)
+    12:20 - David vs. Goliat: El alzamiento de los pequeños modelos de lenguaje (Alexandre Pérez)
+    13:05 - La invación de los Small Language Models (Rodrigo Liberoff, Borja Piris de Castro)
+    13:05 - Copilot Studio - Crea un asistente de reservas de hotel (David Lorenzo, Mario Arias)
+    13:05 - Claves para el Éxito en Proyectos de Adopción de Copilot (Fernando Chiquiza)
+    13:05 - Semantic Kernel: Revoluciona tus aplicaciones empresariales con IA nativa (Emiliano Montesdeoca)
+    13:45 - VIP Session
+    13:55 - Lunch break
+    14:55 - VIP Session
+    15:05 - Knowledge Graphs + LLMs: Lo último en investigación (Aldan Creo)
+    15:05 - Como aplicar tecnicas de LowCode para el desarrollo de modelos de ML Sobre Fabric (Roberto Navarro)
+    15:05 - Microsoft Copilot, ahora para tod@s!! (Toni Granell, Ramón Rautenstrauch)
+    15:05 - GraphQL como exponer una API en Fabric en minutos (Toni Ferrà Arbós)
+    15:50 - SelfIA: Cómo crear tu Funko con Azure OpenAI (María Soto Castro, Mario López)
+    15:50 - League of Legends + IA: Tu nuevo duo no es un smurf… es una IA en Azure (Javier Iniesta Fernández)
+    15:50 - Decoding Azure AI Services: Choosing the right service for the right task (Patricia Rodríguez Vaquero, Jose Luis Ferrete Olarte)
+    15:50 - Cómo entrenar a tu IA (Rukaya Masmoudi Messaoud, Celeste Tania Sánchez Fresneda)
+    16:35 - Microsoft Fabric en la era de la IA (Ana Maria Bisbe York)
+    16:35 - IA: Héroes y Villanos del Siglo XXI - La Importancia de una IA Responsable (Alejandro Cabrera Martínez, Érika Cepeda)
+    16:35 - Del Caos al Control: Observabilidad en Arquitecturas Empresariales de Múltiples Agentes (Antonio José Soto Rodriguez)
+    16:35 - Generación de documentación técnica con OpenAI y Markdown (Jose Manuel Pinto Lozano, Javier Chico)
+    17:20 - Closing Session & Raffle
