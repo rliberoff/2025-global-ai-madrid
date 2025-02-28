@@ -2,30 +2,14 @@
 #pragma warning disable SKEXP0050
 #pragma warning disable SKEXP0070
 
-using System.Collections;
-
 using Demo;
-using Demo.Extensions;
-using Demo.TextSplitters;
 
-using Microsoft.Extensions.AI;
 using Microsoft.Extensions.VectorData;
 using Microsoft.ML.Tokenizers;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Embeddings;
-using Microsoft.SemanticKernel.Text;
 
-using Tabula.Detectors;
-using Tabula.Extractors;
-using Tabula;
 using UglyToad.PdfPig;
-using System.Text;
-using System;
-using Microsoft.SemanticKernel.Plugins.Memory;
-using Microsoft.SemanticKernel.Memory;
-
-
-var textSplitter = new RecursiveCharacterTextSplitter();
 
 const string CollectionName = "Documents";
 
