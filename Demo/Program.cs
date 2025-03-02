@@ -7,16 +7,20 @@ using Demo;
 using Microsoft.Extensions.VectorData;
 using Microsoft.ML.Tokenizers;
 using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Embeddings;
 
 using UglyToad.PdfPig;
 
 const string CollectionName = "Documents";
 
-var ollamaEndpoint = new Uri(@"http://localhost:11434");
-
 const string modelInferenceId = @"phi4:latest";
+//const string modelInferenceId = @"phi-rate-4:4.0";
 const string modelEmbeddingId = @"nomic-embed-text:latest";
+
+string[] files = Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), @"Resources"));
+
+var ollamaEndpoint = new Uri(@"http://localhost:11434");
 
 var tokenizer = TiktokenTokenizer.CreateForEncoding(@"cl100k_base");
 
@@ -33,12 +37,13 @@ var vectorStore = kernel.GetRequiredService<IVectorStore>().UseTextEmbeddingGene
 var collection = vectorStore.GetCollection<string, Document>(CollectionName);
 await collection.CreateCollectionIfNotExistsAsync();
 
-Console.WriteLine("Bienvenidos a la Global AI de Madrid 2025");
+ConsoleColor originalColor = Console.ForegroundColor;
 
-string resourcesPath = Path.Combine(Directory.GetCurrentDirectory(), @"Resources");
-
-// Get all files from the Resources folder
-string[] files = Directory.GetFiles(resourcesPath);
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Bienvenidos a la Global AI de Madrid 2025\n");
+Console.ForegroundColor = ConsoleColor.Magenta;
+Console.WriteLine("Cargando documentos en base de datos vectorial local. Por favor espere...\n");
+Console.ForegroundColor = originalColor;
 
 // Process each file
 foreach (string file in files)
@@ -73,27 +78,28 @@ foreach (string file in files)
     }
     else
     {
-        ConsoleColor originalColor = Console.ForegroundColor;
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine($"Warning: Unsupported file format: {Path.GetFileName(file)}");
         Console.ForegroundColor = originalColor;
     }
 }
 
-const string SystemPrompt = @"""
-You are a helpful assistant.
-Provide accurate, well-reasoned responses based on the given context.
+const string MetaPrompt = @"""
+Provide accurate responses based only on the given context.
+Do not answer from your own knowledge base.
 If the context is insufficient to answer the question, say so.
 Always respond in the same language as the question.
 
-Context: {{$context}}
+Context:
 
-Question: {{$input}}
+";
 
-""";
+var chatService = kernel.GetRequiredService<IChatCompletionService>();
+var search = collection as IVectorizableTextSearch<Document>;
 
 while (true)
 {
+    Console.ForegroundColor = ConsoleColor.Yellow;
     Console.Write(@"Question: ");
     var userQuestion = Console.ReadLine();
 
@@ -101,27 +107,27 @@ while (true)
     {
         continue;
     }
-
-    var search = collection as IVectorizableTextSearch<Document>;
+    
     var searchResult = await search!.VectorizableTextSearchAsync(userQuestion, new() { Top = 1 });
     var resultRecords = await searchResult.Results.ToListAsync();
 
-    var arguments = new KernelArguments()
-    {
-        { @"input", userQuestion },
-        { @"context", string.Join("\n\n", resultRecords.Select(rr => rr.Record.Text)) },
-    };
+    var chatHistory = new ChatHistory();
+    chatHistory.AddDeveloperMessage(MetaPrompt + string.Join("\n\n", resultRecords.Select(rr => rr.Record.Text)));
+    chatHistory.AddUserMessage(userQuestion);
 
-    var response = kernel.InvokePromptStreamingAsync(SystemPrompt, arguments);
+    var response = chatService.GetStreamingChatMessageContentsAsync(chatHistory);
 
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine(@"Answering...");
     await foreach (var item in response)
     {
-        Console.Write(item);
+        Console.Write(item.Content);
     }
 
-    Console.WriteLine($"Ref: {resultRecords[0].Record.Id}\n");
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine($"\n\nRef: {resultRecords[0].Record.Id}");
 
+    Console.ForegroundColor = originalColor;
     Console.WriteLine(string.Empty);
     Console.WriteLine(string.Empty);
 }
